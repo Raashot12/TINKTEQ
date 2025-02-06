@@ -1,4 +1,4 @@
-# Juliet AI onboarding application
+# TINKTEQ CARGO Shipping application
 
 Project is built with [nextjs](https://nextjs.org/docs), with [redux](https://redux.js.org/api/api-reference) for state management and [mantine](https://mantine.dev/pages/basics/) as the component libary.
 
@@ -10,4 +10,4 @@ npm run dev
 yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:4300](http://localhost:4300) with your browser to see the result.
