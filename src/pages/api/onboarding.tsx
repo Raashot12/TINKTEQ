@@ -5,12 +5,11 @@ async function handlerOnboarding(req: NextApiRequest, res: NextApiResponse) {
     if (req.method === 'POST') {
       const data = req.body;
 
-      // Replace with the actual Artible API endpoint
       const response = await fetch('https://api.artible.com/onboarding', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          Authorization: `Bearer patgIqsaT10KgyHRW.99f28806a63947e1f2e656eaebbbbdeecc4a87283b17e967ba659e7c601ead28`, // Use a secure way to store API keys
+          Authorization: `Bearer patgIqsaT10KgyHRW.99f28806a63947e1f2e656eaebbbbdeecc4a87283b17e967ba659e7c601ead28`, 
         },
         body: JSON.stringify(data),
       });
