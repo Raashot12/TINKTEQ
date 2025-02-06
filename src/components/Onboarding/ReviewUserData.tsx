@@ -45,18 +45,33 @@ const ReviewUserData = ({
   async function handleSubmitOnboardingForm() {
     try {
       setIsloading(true);
-      const response = await axios.post('/api/onboarding', userAccountDetail);
+      console.log(userAccountDetail);
+
+      const response = await axios.post(
+        'https://api.airtable.com/v0/appIeKL9UC6Aa47lZ/Table%201',
+        {
+          records: [
+            {
+              fields: userAccountDetail,
+            },
+          ],
+        },
+        {
+          headers: {
+            'Content-Type': 'application/json',
+            Authorization: `Bearer patgIqsaT10KgyHRW.a520a84cb7ee626023c89c7c82b7ad0e80d5ad0e2ee23a3064cb8f23ea791326`,
+          },
+        }
+      );
       setIsloading(false);
       Swal.fire({
         position: 'center',
         icon: 'success',
-        title: response.data?.message,
+        title: "Information submitted successfully",
         showConfirmButton: false,
         timer: 2000,
       });
-      dispatch(
-        stage(1) // update formStage
-      );
+      dispatch(stage(1));
       dispatch(
         userAccountInfo({
           firstName: '',

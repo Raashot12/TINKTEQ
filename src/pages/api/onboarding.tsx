@@ -5,14 +5,18 @@ async function handlerOnboarding(req: NextApiRequest, res: NextApiResponse) {
     if (req.method === 'POST') {
       const data = req.body;
 
-      const response = await fetch('https://api.artible.com/onboarding', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          Authorization: `Bearer patgIqsaT10KgyHRW.99f28806a63947e1f2e656eaebbbbdeecc4a87283b17e967ba659e7c601ead28`, 
-        },
-        body: JSON.stringify(data),
-      });
+      // Replace with the actual Artible API endpoint
+      const response = await fetch(
+        'https://api.airtable.com/v0/appIeKL9UC6Aa47lZ/Table%201',
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            Authorization: `Bearer patgIqsaT10KgyHRW.a520a84cb7ee626023c89c7c82b7ad0e80d5ad0e2ee23a3064cb8f23ea791326`, // Use a secure way to store API keys
+          },
+          body: JSON.stringify(data),
+        }
+      );
 
       if (!response.ok) {
         throw new Error(`Failed to submit data: ${response.statusText}`);
