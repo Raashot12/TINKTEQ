@@ -16,7 +16,7 @@ export default function Home() {
   return (
     <Container size="xl">
       <Head>
-        <title>Julieth AI</title>
+        <title>TINKTEQ</title>
         <meta name="description" content="Juliet AI" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
